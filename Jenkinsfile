@@ -20,11 +20,7 @@ pipeline {
                 sh 'docker images'
             }
         }
-        stage('Build Docker Image') {
-            steps {
-               sh 'docker build -t docker-pipeline:v1 .'
-                }
-       }
+    
         stage('Run Docker Container') {
            steps {
                sh '''
