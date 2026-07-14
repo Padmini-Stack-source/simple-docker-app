@@ -21,13 +21,11 @@ pipeline {
             }
         }
     
-        stage('Run Docker Container') {
-           steps {
-               sh '''
-                docker rm -f docker-container || true
-                sh 'docker run -d --name docker-container -p 8081:80 simple-app:v1'
-                '''
-                }
-        }
+      stage('Run Docker Container') {
+    steps {
+        sh 'docker rm -f docker-container || true'
+        sh 'docker run -d --name docker-container -p 8081:80 simple-app:v1'
+    }
+}
     }
 }
