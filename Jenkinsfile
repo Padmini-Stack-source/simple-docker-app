@@ -25,7 +25,7 @@ pipeline {
            steps {
                sh '''
                 docker rm -f docker-container || true
-                docker run -d --name docker-container -p 8081:80 docker-pipeline:v1
+                sh 'docker run -d --name docker-container -p 8081:80 simple-app:v1'
                 '''
                 }
         }
